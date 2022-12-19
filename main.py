@@ -5,8 +5,8 @@ letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", 
 numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 simbolos = ["{", "}", "[", "]", "(", ")", "?", "/", ";", ":", ".", ">", "<", ",", "|", "\\"]
 
-print("Bem-vindo!")
-num_caracteres = (input("Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n"))
+print('Bem-vindo!')
+num_caracteres = (input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n'))
 check = num_caracteres.isdigit()
 
 while check == False:
@@ -16,19 +16,26 @@ while check == False:
 num_caracteres = int(num_caracteres)
 while num_caracteres < 8 or num_caracteres > 32:
         if num_caracteres < 8:
-            print("Você digitou um número menor do que o recomendado.")
-            num_caracteres = int((input("Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n")))
+            print('Você digitou um número menor do que o recomendado.')
+            num_caracteres = int((input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
         elif num_caracteres > 32:
-            print("Você digitou um número maior que o recomendado.")
-            num_caracteres = int((input("Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n")))
+            print('Você digitou um número maior que o recomendado.')
+            num_caracteres = int((input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
 
-print(f"Muito bem. Você escolheu uma senha contendo {num_caracteres} caracteres.")
+print(f'Muito bem. Você escolheu uma senha contendo {num_caracteres} caracteres.')
 
 qnt_numero = 0
-adicionar_numeros = input("\nAgora, informe se sua senha deve conter números (Sim/Não):\n").lower()
-while adicionar_numeros != "sim" and adicionar_numeros != "não":
-    adicionar_numeros = input('Você deve digitar "Sim" ou Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter números:\n').lower()
-if adicionar_numeros == "sim":
-    qnt_numero = int(input("Você optou por adicionar números a sua senha.\nInforme quantos números devem compor sua senha:\n"))
+adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 
-adicionar_simbolos = input("\nPor fim, informe se deseja que sua senha contenha simbolos (Sim/Não:\n").lower()
+while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
+    adicionar_numeros = input('Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter números:\n').lower()
+
+if adicionar_numeros == 'sim':
+    print('Você optou por adicionar números a sua senha.')
+else:
+    print('Você optou por não adicionar números a sua senha.')
+
+if adicionar_numeros == 'sim':
+    
+
+adicionar_simbolos = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não:\n').lower()
