@@ -24,7 +24,6 @@ while num_caracteres < 8 or num_caracteres > 32:
 
 print(f'Muito bem. Você escolheu uma senha contendo {num_caracteres} caracteres.')
 
-qnt_numero = 0
 adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 
 while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
