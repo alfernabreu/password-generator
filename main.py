@@ -39,10 +39,6 @@ fracao_de_numeros_na_senha = round(0.4 * num_caracteres)
 
 if adicionar_numeros == 'sim':
     qnt_numeros_na_senha = num_caracteres - fracao_de_numeros_na_senha
-    
-print(num_caracteres)
-print(fracao_de_numeros_na_senha)
-print(qnt_numeros_na_senha)
 
 adicionar_simbolos = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não):\n').lower()
 while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
@@ -52,11 +48,4 @@ if adicionar_numeros == 'sim':
     print('Você optou por adicionar símbolos a sua senha.')
 else:
     print('Você optou por não adicionar símbolos a sua senha.')
-
-qnt_simbolos_senha = 0
-fracao_de_simbolos_na_senha = round(0.3 * num_caracteres)
-if adicionar_simbolos == 'sim':
-    qnt_simbolos_senha = num_caracteres - fracao_de_simbolos_na_senha
-
-
 
