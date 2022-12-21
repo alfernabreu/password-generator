@@ -41,3 +41,10 @@ if adicionar_simbolos == 'sim':
 else:
     print('Você optou por não adicionar símbolos a sua senha.')
 
+if adicionar_numeros == 'sim' and adicionar_simbolos == 'não':
+    caracteres_senha = letras + numeros
+elif adicionar_numeros == 'sim' and adicionar_simbolos == 'sim':
+    caracteres_senha = letras + numeros + simbolos
+elif adicionar_numeros == 'não' and adicionar_simbolos == 'sim':
+    caracteres_senha = letras + simbolos
+
