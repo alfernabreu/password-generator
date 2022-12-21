@@ -34,14 +34,14 @@ if adicionar_numeros == 'sim':
 else:
     print('Você optou por não adicionar números a sua senha.')
 
-senha = 0
-qnt_numero = round(0.3 * num_caracteres)
+qnt_numeros_na_senha = 0
+fracao_de_numeros_na_senha = round(0.4 * num_caracteres)
 
 if adicionar_numeros == 'sim':
-    senha = num_caracteres - qnt_numero
+    qnt_numeros_na_senha = num_caracteres - fracao_de_numeros_na_senha
     
 print(num_caracteres)
-print(qnt_numero)
-print(senha)
+print(fracao_de_numeros_na_senha)
+print(qnt_numeros_na_senha)
 
 adicionar_simbolos = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não):\n').lower()
