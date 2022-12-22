@@ -10,7 +10,7 @@ num_caracteres = (input('Por favor, informe o número de caracteres (entre 8 e 3
 check = num_caracteres.isdigit()
 
 while check == False:
-    num_caracteres = input('Isso não é um número.\nPor favor, informe o número de caracteres(entre 8 e 32) que deve compor a sua senha:\n')
+    num_caracteres = input('ATENÇÃO: Isso não é um número.\nPor favor, informe o número de caracteres(entre 8 e 32) que deve compor a sua senha:\n')
     check = num_caracteres.isdigit()
 
 num_caracteres = int(num_caracteres)
@@ -28,7 +28,7 @@ print(f'Muito bem. Você escolheu uma senha contendo {num_caracteres} caracteres
 adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 
 while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
-    adicionar_numeros = input('ATENÇÃO:Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter números:\n').lower()
+    adicionar_numeros = input('\nATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter números:\n').lower()
 
 if adicionar_numeros == 'sim':
     print('\nVocê optou por adicionar números a sua senha.')
@@ -37,7 +37,7 @@ else:
 
 adicionar_simbolos = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não):\n').lower()
 while adicionar_simbolos != 'sim' and adicionar_simbolos != 'não':
-    adicionar_simbolos = input('ATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter símbolos:\n').lower()
+    adicionar_simbolos = input('\n ATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter símbolos:\n').lower()
 
 if adicionar_simbolos == 'sim':
     print('\nVocê optou por adicionar símbolos a sua senha.')
