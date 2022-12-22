@@ -37,7 +37,7 @@ else:
 
 adicionar_simbolos = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não):\n').lower()
 while adicionar_simbolos != 'sim' and adicionar_simbolos != 'não':
-    adicionar_simbolos = input('\n ATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter símbolos:\n').lower()
+    adicionar_simbolos = input('\nATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter símbolos:\n').lower()
 
 if adicionar_simbolos == 'sim':
     print('\nVocê optou por adicionar símbolos a sua senha.')
@@ -60,3 +60,4 @@ for i in range (num_caracteres):
 senha = ''.join(senha_final)
 print()
 print(f'Sua senha é: {senha}')
+print(f'Obrigado por utilizar este programa.')
