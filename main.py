@@ -16,10 +16,10 @@ while check == False:
 num_caracteres = int(num_caracteres)
 while num_caracteres < 8 or num_caracteres > 32:
         if num_caracteres < 8:
-            print('Você digitou um número menor do que o recomendado.')
+            print('ATENÇÃO: Você digitou um número menor do que o recomendado.')
             num_caracteres = int((input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
         elif num_caracteres > 32:
-            print('Você digitou um número maior que o recomendado.')
+            print('ATENÇÃO: Você digitou um número maior que o recomendado.')
             num_caracteres = int((input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
 
 print()
