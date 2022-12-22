@@ -47,4 +47,9 @@ elif adicionar_numeros == 'sim' and adicionar_simbolos == 'sim':
     caracteres_senha = letras + numeros + simbolos
 elif adicionar_numeros == 'não' and adicionar_simbolos == 'sim':
     caracteres_senha = letras + simbolos
+else:
+    caracteres_senha = letras
 
+print(caracteres_senha)
+for caractere in caracteres_senha(1, 32):
+    print(caractere)
