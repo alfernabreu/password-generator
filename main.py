@@ -60,4 +60,4 @@ for i in range (num_caracteres):
 senha = ''.join(senha_final)
 print()
 print(f'Sua senha é: {senha}')
-print(f'Obrigado por utilizar este programa.')
+print('Obrigado por utilizar este programa.\n')
