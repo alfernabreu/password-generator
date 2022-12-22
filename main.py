@@ -1,3 +1,5 @@
+import random
+
 letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", 
 "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -20,6 +22,7 @@ while num_caracteres < 8 or num_caracteres > 32:
             print('Você digitou um número maior que o recomendado.')
             num_caracteres = int((input('Por favor, informe o número de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
 
+print()
 print(f'Muito bem. Você escolheu uma senha contendo {num_caracteres} caracteres.')
 
 adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
@@ -37,9 +40,9 @@ while adicionar_simbolos != 'sim' and adicionar_simbolos != 'não':
     adicionar_simbolos = input('Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter símbolos:\n').lower()
 
 if adicionar_simbolos == 'sim':
-    print('Você optou por adicionar símbolos a sua senha.')
+    print('\nVocê optou por adicionar símbolos a sua senha.')
 else:
-    print('Você optou por não adicionar símbolos a sua senha.')
+    print('\nVocê optou por não adicionar símbolos a sua senha.')
 
 if adicionar_numeros == 'sim' and adicionar_simbolos == 'não':
     caracteres_senha = letras + numeros
@@ -50,6 +53,10 @@ elif adicionar_numeros == 'não' and adicionar_simbolos == 'sim':
 else:
     caracteres_senha = letras
 
-print(caracteres_senha)
-for caractere in caracteres_senha(1, 32):
-    print(caractere)
+senha_final = []
+for i in range (num_caracteres):
+    senha_final.append(random.choice(caracteres_senha))
+
+senha = ''.join(senha_final)
+print()
+print(f'Sua senha é: {senha}')
