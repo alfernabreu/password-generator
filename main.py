@@ -38,16 +38,25 @@ quantidade_numeros = 0
 if adicionar_numeros == 'sim':
     print('\nVocê optou por adicionar números a sua senha.')
     quantidade_numeros = input('Por favor, digite quantos números deverão compor sua senha:\n')
+
     check = quantidade_numeros.isdigit()
 
     while check == False:
-        quantidade_numeros = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe a quantos números deverão compor sua senha:\n')
+        quantidade_numeros = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe quantos números deverão compor sua senha:\n')
         check = quantidade_numeros.isdigit()
 
     quantidade_numeros = int(quantidade_numeros)
     while quantidade_numeros > numero_caracteres:
         print(f'Você optou por uma quantidade de números superior à quantidade de caracteres da senha ({numero_caracteres} foi o número de caracteres escolhido.).')
-        quantidade_numeros = int(input('Por favor, digite quantos números deverão compor sua senha:\n'))
+        quantidade_numeros = input('Por favor, digite quantos números deverão compor sua senha:\n')
+        
+        check = quantidade_numeros.isdigit()
+
+        while check == False:
+            quantidade_numeros = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe quantos números deverão compor sua senha:\n')
+            check = quantidade_numeros.isdigit()
+            
+    quantidade_numeros = int(quantidade_numeros)
 
     if quantidade_numeros == numero_caracteres:
         print(f'Você optou por uma quantidade de números igual à quantidade de caracteres da senha ({numero_caracteres} foi o número de caracteres escolhido.)')
