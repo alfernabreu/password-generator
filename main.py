@@ -5,6 +5,8 @@ letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", 
 numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 simbolos = ["{", "}", "[", "]", "(", ")", "?", "/", ";", ":", ".", ">", "<", ",", "|", "\\"]
 
+
+
 print('Bem-vindo!')
 numero_caracteres = (input('Por favor, informe a quantidade de caracteres (entre 8 e 32) que deve compor a sua senha:\n'))
 
@@ -12,7 +14,7 @@ numero_caracteres = (input('Por favor, informe a quantidade de caracteres (entre
 check = numero_caracteres.isdigit()
 
 while check == False:
-    numero_caracteres = input('ATENÇÃO: Isso não é um número.\nPor favor, informe a quantidade de caracteres(entre 8 e 32) que deve compor a sua senha:\n')
+    numero_caracteres = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe a quantidade de caracteres(entre 8 e 32) que deve compor a sua senha:\n')
     check = numero_caracteres.isdigit()
 
 numero_caracteres = int(numero_caracteres)
@@ -23,27 +25,48 @@ while numero_caracteres < 8 or numero_caracteres > 32:
         elif numero_caracteres > 32:
             print('ATENÇÃO: Você digitou uma quantidade maior que a recomendada.')
             numero_caracteres = int((input('Por favor, informe a quantidade de caracteres (entre 8 e 32) que deve compor a sua senha:\n')))
-
 print()
 print(f'Muito bem. Você escolheu uma senha contendo {numero_caracteres} caracteres.')
 
-adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 
+
+adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
     adicionar_numeros = input('\nATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve conter números:\n').lower()
 
 quantidade_numeros = 0
 if adicionar_numeros == 'sim':
     print('\nVocê optou por adicionar números a sua senha.')
-    quantidade_numeros = int(input('Por favor, digite quantos números deverão compor sua senha:\n'))
-    # restringir a quantidade de números ao limite de caracteres escolhidos pelos usuário no primeiro input.
+    quantidade_numeros = input('Por favor, digite quantos números deverão compor sua senha:\n')
+    check = quantidade_numeros.isdigit()
+
+    while check == False:
+        quantidade_numeros = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe a quantos números deverão compor sua senha:\n')
+        check = quantidade_numeros.isdigit()
+
+    quantidade_numeros = int(quantidade_numeros)
     while quantidade_numeros > numero_caracteres:
-        print(f'Você optou por uma quantidade de números superior à quantidade de caracteres da senha ({numero_caracteres} foi o valor escolhido).')
+        print(f'Você optou por uma quantidade de números superior à quantidade de caracteres da senha ({numero_caracteres} foi o número de caracteres escolhido.).')
         quantidade_numeros = int(input('Por favor, digite quantos números deverão compor sua senha:\n'))
-    while quantidade_numeros == numero_caracteres:
-        print(f'Você optou por uma quantidade de números igual à quantidade de caracteres da senha ({numero_caracteres} foi o valor escolhido)')
-        
-    numero_caracteres = numero_caracteres - quantidade_numeros
+
+    if quantidade_numeros == numero_caracteres:
+        print(f'Você optou por uma quantidade de números igual à quantidade de caracteres da senha ({numero_caracteres} foi o número de caracteres escolhido.)')
+        apenas_numero = input('Você deseja criar uma senha sem a presença de números? (Sim/Não):\n').lower()
+        while apenas_numero != 'sim' and apenas_numero != 'não':
+            print('ATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.')
+            apenas_numero = input('Por favor, digite "Sim" se desejar que sua senha seja formada sem letras ou "Não" caso opte pela presença de letras:\n')
+        if apenas_numero == 'sim':
+            numero_caracteres = quantidade_numeros
+        else:
+            quantidade_numeros = input('Por favor, digite quantos números deverão compor sua senha:\n')
+            check = quantidade_numeros.isdigit()
+
+            while check == False:
+                quantidade_numeros = input('ATENÇÃO: O valor digitado não é um número.\nPor favor, informe a quantos números deverão compor sua senha:\n')
+                check = quantidade_numeros.isdigit()
+
+            quantidade_numeros = int(quantidade_numeros)
+            numero_caracteres = numero_caracteres - quantidade_numeros
 else:
     print('\nVocê optou por não adicionar números a sua senha.')
 
