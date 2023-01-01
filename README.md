@@ -12,6 +12,7 @@ Este projeto encontra-se ⚠️ em desenvolvimento ⚠️ sendo possível ao usu
 
 ------------
 ## Recursos a serem implementados
+- Substituição de blocos de códigos por funções;
 - Ambiente gráfico;
 - Opção de gerar arquivo com nome do serviço e senha;
 - Opção de salvar o referido arquivo na nuvem;
