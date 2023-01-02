@@ -84,7 +84,13 @@ if adicionar_numeros == 'sim':
             quantidade_numeros = int(quantidade_numeros)
             numero_caracteres = numero_caracteres - quantidade_numeros
 
-            
+            for char in range(1, numero_caracteres + 1):
+                caracteres_senha.append(random.choice(letras))
+
+            quantidade_numeros = abs(quantidade_numeros - numero_caracteres)
+
+            for char in range (1, quantidade_numeros + 1):
+                quantidade_numeros.append(random.choice(numeros))
 else:
     print('\nVocê optou por não adicionar números a sua senha.')
 
