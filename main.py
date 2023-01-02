@@ -11,7 +11,7 @@ print('')
 adicionar_letra = input('Por favor, informe se deseja que sua senha contenha letras. Digite "Sim" ou "Não":\n').lower()
 
 while adicionar_letra != 'sim' and adicionar_letra != 'não':
-    adicionar_letra = input('\nATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve contar letras:\n').lower
+    adicionar_letra = input('\nATENÇÃO: Você deve digitar "Sim" ou "Não" para concluir esta etapa.\nAgora, informe se sua senha deve contar letras:\n').lower()
 
 numero_letra = 0
 if adicionar_letra == 'sim':
@@ -52,7 +52,6 @@ if adicionar_numero == 'sim':
         caracteres_senha += random.choice(numeros)
 else:
     print('\nVocê optou por não adicionar números a sua senha.')
-
 
 
 adicionar_simbolo = input('\nPor fim, informe se deseja que sua senha contenha símbolos (Sim/Não):\n').lower()
