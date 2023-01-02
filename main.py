@@ -27,7 +27,7 @@ while numero_caracteres < 8 or numero_caracteres > 32:
 print()
 print(f'Muito bem. Você escolheu uma senha contendo {numero_caracteres} caracteres.')
 
-
+caracteres_senha = []
 
 adicionar_numeros = input('\nAgora, informe se sua senha deve conter números (Sim/Não):\n').lower()
 while adicionar_numeros != 'sim' and adicionar_numeros != 'não':
@@ -48,7 +48,7 @@ if adicionar_numeros == 'sim':
     while quantidade_numeros > numero_caracteres:
         print()
         print(f'ATENÇÃO: Você optou por uma senha de {numero_caracteres} caracteres.')
-        print('A quantidade de números que devem compor sua senha é superior à quantidade de caracteres da senha.')
+        print('A quantidade de números que devem compor sua senha escolhida é superior à quantidade de caracteres da senha.')
         quantidade_numeros = input('Por favor, digite quantos números deverão compor sua senha:\n')
         
         check = quantidade_numeros.isdigit()
@@ -69,7 +69,8 @@ if adicionar_numeros == 'sim':
             apenas_numero = input('Por favor, digite "Sim" se desejar que sua senha seja formada sem letras ou "Não" caso opte pela presença de letras:\n')
 
         if apenas_numero == 'sim':
-            numero_caracteres = quantidade_numeros
+            for char in range(1, quantidade_numeros + 1):
+                caracteres_senha.append(random.choice(numeros))
         else:
             print('Você decidiu por não excluir a presença de letras na composição de sua senha')
             print(f'Você optou por uma senha com {numero_caracteres} caracteres.')
@@ -82,9 +83,10 @@ if adicionar_numeros == 'sim':
 
             quantidade_numeros = int(quantidade_numeros)
             numero_caracteres = numero_caracteres - quantidade_numeros
+
+            
 else:
     print('\nVocê optou por não adicionar números a sua senha.')
-
 
 
 
@@ -144,6 +146,9 @@ if adicionar_simbolos == 'sim':
 
 else:
     print('\nVocê optou por não adicionar símbolos a sua senha.')
+
+
+
 
 if adicionar_numeros == 'sim' and adicionar_simbolos == 'não':
     caracteres_senha = letras + numeros
