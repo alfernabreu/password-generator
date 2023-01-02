@@ -45,6 +45,16 @@ if adicionar_numeros == 'sim':
         check = quantidade_numeros.isdigit()
 
     quantidade_numeros = int(quantidade_numeros)
+
+    numero_caracteres = numero_caracteres - quantidade_numeros
+    for char in range(1, numero_caracteres + 1):
+        caracteres_senha.append(random.choice(letras))
+
+    quantidade_numeros = abs(quantidade_numeros - numero_caracteres)
+    for char in range (1, quantidade_numeros + 1):
+        caracteres_senha += random.choice(numeros)
+
+
     while quantidade_numeros > numero_caracteres:
         print()
         print(f'ATENÇÃO: Você optou por uma senha de {numero_caracteres} caracteres.')
@@ -90,7 +100,7 @@ if adicionar_numeros == 'sim':
             quantidade_numeros = abs(quantidade_numeros - numero_caracteres)
 
             for char in range (1, quantidade_numeros + 1):
-                quantidade_numeros.append(random.choice(numeros))
+                caracteres_senha += random.choice(numeros)
 else:
     print('\nVocê optou por não adicionar números a sua senha.')
 
@@ -153,17 +163,6 @@ if adicionar_simbolos == 'sim':
 else:
     print('\nVocê optou por não adicionar símbolos a sua senha.')
 
-
-
-
-if adicionar_numeros == 'sim' and adicionar_simbolos == 'não':
-    caracteres_senha = letras + numeros
-elif adicionar_numeros == 'sim' and adicionar_simbolos == 'sim':
-    caracteres_senha = letras + numeros + simbolos
-elif adicionar_numeros == 'não' and adicionar_simbolos == 'sim':
-    caracteres_senha = letras + simbolos
-else:
-    caracteres_senha = letras
 
 senha_final = []
 for i in range (numero_caracteres):
